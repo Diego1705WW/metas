@@ -1,0 +1,54 @@
+:root{color-scheme:dark;--bg:#0b0d12;--card:#151922;--line:#262c3a;--text:#e8ecf4;--mute:#8b94a7;--green:#22c55e;--red:#ef4444;--amber:#f59e0b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;display:flex;justify-content:center;padding:20px 14px}
+.app{width:100%;max-width:460px;display:flex;flex-direction:column;gap:14px}
+h1{font-size:1.25rem;margin:0;text-align:center;letter-spacing:.5px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
+button{border:0;border-radius:12px;padding:12px 14px;font-size:.95rem;font-weight:700;color:#fff;cursor:pointer;transition:transform .1s,filter .2s;font-family:inherit}
+button:active{transform:scale(.97)}button:hover{filter:brightness(1.1)}
+input{width:100%;background:#0f121a;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:13px;font-size:1rem;font-family:inherit}
+input:focus{outline:2px solid #3b82f6;border-color:transparent}
+label.l{display:block;font-size:.8rem;color:var(--mute);margin:12px 0 6px}
+.blue{background:#3b82f6}.green{background:var(--green);color:#06210f}.red{background:var(--red)}.ghost{background:#222839;color:var(--text)}
+.bar{display:flex;gap:8px}.bar button{flex:1}
+.hide{display:none!important}
+
+/* lista */
+.goal{display:flex;gap:10px;align-items:center;cursor:pointer;border-left:4px solid var(--amber)}
+.goal.done{border-color:var(--green);background:linear-gradient(90deg,rgba(34,197,94,.12),var(--card))}
+.goal .info{flex:1;min-width:0}
+.goal .name{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.goal .sub{font-size:.82rem;color:var(--mute);margin:3px 0 8px}
+.mini{height:8px;background:#222839;border-radius:99px;overflow:hidden}
+.mini i{display:block;height:100%;background:var(--amber);border-radius:99px;transition:width .5s}
+.goal.done .mini i{background:var(--green)}
+.badge{display:inline-block;margin-top:8px;font-size:.78rem;font-weight:700;color:var(--green);background:rgba(34,197,94,.15);padding:4px 10px;border-radius:99px}
+.del{background:transparent;color:var(--red);font-size:1.2rem;padding:8px}
+.edit{background:transparent;color:var(--text);font-size:1.1rem;padding:8px}
+.chk{width:22px;height:22px;accent-color:var(--red);flex:none}
+.empty{text-align:center;color:var(--mute);padding:30px 10px}
+
+/* detalle */
+.gauge{text-align:center}
+svg{width:100%;height:auto;display:block}
+.track{fill:none;stroke:#222839;stroke-width:16;stroke-linecap:round}
+.fill{fill:none;stroke:var(--amber);stroke-width:16;stroke-linecap:round;stroke-dasharray:0 100;transition:stroke-dasharray .8s ease,stroke .5s}
+.needle{transform-origin:120px 120px;transition:transform .8s cubic-bezier(.3,1.4,.5,1)}
+.tick{stroke:#3a4255;stroke-width:2}
+.pct{font-size:2.4rem;font-weight:700;margin-top:-34px}
+.amounts{color:var(--mute);font-size:.95rem}.amounts b{color:var(--text)}
+.status{margin-top:12px;padding:10px;border-radius:12px;font-weight:600;font-size:.95rem;background:#1b2030;color:var(--mute)}
+.status.ok{background:rgba(34,197,94,.15);color:var(--green);box-shadow:0 0 18px rgba(34,197,94,.25)}
+.msg{min-height:1.2em;font-size:.85rem;color:var(--red);margin-top:8px}
+ul{list-style:none;margin:0;padding:0;max-height:200px;overflow-y:auto}
+li{display:flex;justify-content:space-between;padding:9px 2px;border-bottom:1px solid var(--line);font-size:.9rem}
+li:last-child{border:0}li .d{color:var(--green)}li .r{color:var(--red)}li small{color:var(--mute)}
+
+/* modal */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:20px;z-index:50}
+.modal{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;width:100%;max-width:380px}
+.modal h2{margin:0 0 8px;font-size:1.1rem}
+.modal p{color:var(--mute);font-size:.92rem;margin:0 0 6px}
+.modal ul{max-height:130px;margin:8px 0 14px;color:var(--text);font-size:.9rem}
+.modal li{padding:5px 0;border:0}
